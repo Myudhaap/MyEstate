@@ -1,9 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
+
+import userRouter from "./routes/user.route.js";
 import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+
+app.use("/api/user", userRouter);
 
 mongoose
   .connect(process.env.MONGOOURI)
