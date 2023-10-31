@@ -74,3 +74,14 @@ export const google = async (req, res, next) => {
     next(err);
   }
 };
+
+export const signout = async (req, res, next) => {
+  try {
+    res
+      .clearCookie("access_token")
+      .status(200)
+      .json({ message: "User has been sign out" });
+  } catch (err) {
+    next(errorHandler(401, "You can only sign out your won account"));
+  }
+};
