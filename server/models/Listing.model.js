@@ -22,10 +22,6 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    images: {
-      type: [String],
-      required: true,
-    },
     bathrooms: {
       type: Number,
       required: true,
