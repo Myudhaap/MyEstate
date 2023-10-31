@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -10,6 +11,7 @@ import ErrorHandler from "./middlewares/error.middleware.js";
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
